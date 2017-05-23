@@ -1,22 +1,17 @@
+#encoding=utf8
 import fanfou
 import json
 
-# ff = fanfou.XAuth('key', 'secret', 'username', 'password')
-
 def query(key):
-  action = key.split(' ')[1]
-  if action == 'config':
-    account = read_file()
-    account['key'] = key.split(' ')[2]
-    account['secret'] = key.split(' ')[3]
-    write_file(account)
-  elif action == 'login':
-    account = read_file()
-    account['username'] = key.split(' ')[2]
-    account['password'] = key.split(' ')[3]
-    write_file(account)
-  else:
-    post(key)
+  args = key.split(' ')
+  if len(args) > 1:
+    content = args[2:].join(' ')
+    content_length = len(content)
+    return {
+      'Title': '饭否',
+      'SubTitle': content_length + ' 字 ' + key
+    }
+
 
 def write_file(content):
   account_str = json.dumps(content)

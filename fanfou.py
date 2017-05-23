@@ -1,3 +1,4 @@
+#encoding=utf8
 import time
 import urllib
 import hmac
