@@ -1,0 +1,12 @@
+{
+  "ID":"C70233683FB311E7A91992EBCB67FE33",
+  "ActionKeyword":"ff",
+  "Name":"Wox Fanfou",
+  "Description":"Wox Fanfou Client",
+  "Author":"LitoMore",
+  "Version":"0.0.1",
+  "Language":"python",
+  "Website":"https://github.com/LitoMore/Wox.Plugin.Fanfou",
+  "IcoPath": "Images\\pic.png",
+  "ExecuteFileName":"fanfou.py"
+}
