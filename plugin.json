@@ -8,5 +8,5 @@
   "Language":"python",
   "Website":"https://github.com/LitoMore/Wox.Plugin.Fanfou",
   "IcoPath": "Images\\pic.png",
-  "ExecuteFileName":"fanfou.py"
+  "ExecuteFileName":"main.py"
 }
