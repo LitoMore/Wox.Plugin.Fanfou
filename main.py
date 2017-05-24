@@ -19,30 +19,41 @@ class Main(Wox):
             if args[0] == 'config' and len(args) == 3:
                 key = args[1]
                 secret = args[2]
+                account = self.read_file()
+                account['key'] = key
+                account['secret'] = secret
                 return [{
                     'Title': '饭否',
                     'SubTitle': '配置 Consumer Key 与 Consumer Secret',
                     'JsonRPCAction': {
                         'method': 'write_file',
-                        'parameters': [{
-                            'key': key,
-                            'secret': secret
-                        }]
+                        'parameters': [account]
                     }
                 }]
             elif args[0] == 'login' and len(args) == 3:
                 username = args[1]
                 password = args[2]
+                account = self.read_file()
+                account['username'] = username
+                account['password'] = password
                 return [{
                     'Title': '饭否',
-                    'SubTitle': '登陆饭否账号'
+                    'SubTitle': '登陆饭否账号',
+                    'JsonRPCAction': {
+                        'method': 'write_file',
+                        'parameters': [account]
+                    }
                 }]
             else:
                 count = str(len(query))
                 res = count + ' 字'
                 return [{
                     'Title': '饭否',
-                    'SubTitle': res
+                    'SubTitle': res,
+                    'JsonRPCAction': {
+                        'method': 'post',
+                        'parameters': [query]
+                    }
                 }]
 
     def write_file(self, content):
