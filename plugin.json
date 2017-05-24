@@ -7,6 +7,6 @@
   "Version":"0.0.1",
   "Language":"python",
   "Website":"https://github.com/LitoMore/Wox.Plugin.Fanfou",
-  "IcoPath": "Images\\pic.png",
+  "IcoPath": "Images/wox-fanfou.png",
   "ExecuteFileName": "main.py"
 }

@@ -10,7 +10,8 @@ class Main(Wox):
     def query(self, query):
         default = [{
             'Title': '饭否',
-            'SubTitle': '你在做什么？'
+            'SubTitle': '你在做什么？',
+            'IcoPath': 'Images/wox-fanfou.png'
         }]
         if query == '':
             return default
@@ -19,29 +20,27 @@ class Main(Wox):
             if args[0] == 'config' and len(args) == 3:
                 key = args[1]
                 secret = args[2]
-                account = self.read_file()
-                account['key'] = key
-                account['secret'] = secret
+                count = len(secret) % 2
                 return [{
                     'Title': '饭否',
-                    'SubTitle': '配置 Consumer Key 与 Consumer Secret',
+                    'SubTitle': '配置 Consumer Key 与 Consumer Secret' + ' ' * count,
+                    'IcoPath': 'Images/wox-fanfou.png',
                     'JsonRPCAction': {
-                        'method': 'write_file',
-                        'parameters': [account]
+                        'method': 'write_consumer',
+                        'parameters': [key, secret]
                     }
                 }]
             elif args[0] == 'login' and len(args) == 3:
                 username = args[1]
                 password = args[2]
-                account = self.read_file()
-                account['username'] = username
-                account['password'] = password
+                count = len(password) % 2
                 return [{
-                    'Title': '饭否',
-                    'SubTitle': '登陆饭否账号',
+                    'Title': '饭否登陆',
+                    'SubTitle': '登陆饭否账号' + ' ' * count,
+                    'IcoPath': 'Images/wox-fanfou.png',
                     'JsonRPCAction': {
-                        'method': 'write_file',
-                        'parameters': [account]
+                        'method': 'write_account',
+                        'parameters': [username, password]
                     }
                 }]
             else:
@@ -50,20 +49,36 @@ class Main(Wox):
                 return [{
                     'Title': '饭否',
                     'SubTitle': res,
+                    'IcoPath': 'Images/wox-fanfou.png',
                     'JsonRPCAction': {
                         'method': 'post',
                         'parameters': [query]
                     }
                 }]
 
-    def write_file(self, content):
-        account_str = json.dumps(content)
-        f = open('config.json', 'w')
+    def write_consumer(self, key, secret):
+        account_str = json.dumps({
+            'key': key,
+            'secret': secret
+        })
+        f = open(os.path.expanduser('~') + '\\wox-fanfou-config.json', 'w')
+        f.write(account_str)
+        f.close()
+
+    def write_account(self, username, password):
+        consumer = self.read_file()
+        account_str = json.dumps({
+            'key': consumer['key'],
+            'secret': consumer['secret'],
+            'username': username,
+            'password': password
+        })
+        f = open(os.path.expanduser('~') + '\\wox-fanfou-config.json', 'w')
         f.write(account_str)
         f.close()
 
     def read_file(self):
-        f = open('config.json', 'r')
+        f = open(os.path.expanduser('~') + '\\wox-fanfou-config.json', 'r')
         content = f.read()
         f.close()
         account = json.loads(content)
@@ -71,7 +86,10 @@ class Main(Wox):
 
     def post(self, text):
         account = self.read_file()
-        ff = fanfou.XAuth(account, account.username, account.password)
+        ff = fanfou.XAuth({
+            'key': account['key'],
+            'secret': account['secret']
+        }, account['username'], account['password'])
         ff.request('/statuses/update', 'POST', {'status': text})
 
 if __name__ == "__main__":
