@@ -35,8 +35,8 @@ class Main(Wox):
                 password = args[2]
                 count = len(password) % 2
                 return [{
-                    'Title': '饭否登陆',
-                    'SubTitle': '登陆饭否账号' + ' ' * count,
+                    'Title': '饭否登录',
+                    'SubTitle': '登录饭否账号' + ' ' * count,
                     'IcoPath': 'Images/wox-fanfou.png',
                     'JsonRPCAction': {
                         'method': 'write_account',
