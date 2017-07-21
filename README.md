@@ -32,4 +32,4 @@ Enjoy it! :]
 
 ## Thank
 
-- [fanfou.py](https://github.com/akgnah/fanfou.bot/blob/master/fanfou.py) - OAuth of Fanfou
+- [fanfou.py](https://github.com/akgnah/fanfou-py) - OAuth of Fanfou
