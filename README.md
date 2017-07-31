@@ -28,8 +28,12 @@ ff login username password
 ff Hi Wox Fanfou
 ```
 
-Enjoy it! :]
+## Related
 
-## Thank
-
+- [alfred-fanfou](https://github.com/LitoMore/alfred-fanfou) - Alfred 3 workflow for Fanfou
+- [cerebro-fanfou](https://github.com/LitoMore/cerebro-fanfou) - A cerebro plugin for Fanfou
 - [fanfou-py](https://github.com/akgnah/fanfou-py) - OAuth of Fanfou
+
+## License
+
+MIT @ [LitoMore](https://github.com/LitoMore)
