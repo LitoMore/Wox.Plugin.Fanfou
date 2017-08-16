@@ -36,4 +36,4 @@ ff Hi Wox Fanfou
 
 ## License
 
-MIT @ [LitoMore](https://github.com/LitoMore)
+MIT © [LitoMore](https://github.com/LitoMore)
