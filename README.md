@@ -32,7 +32,7 @@ ff Hi Wox Fanfou
 
 - [alfred-fanfou](https://github.com/LitoMore/alfred-fanfou) - Alfred 3 workflow for Fanfou
 - [cerebro-fanfou](https://github.com/LitoMore/cerebro-fanfou) - A cerebro plugin for Fanfou
-- [fanfou-py](https://github.com/akgnah/fanfou-py) - OAuth of Fanfou
+- [fanfou-py](https://github.com/akgnah/fanfou-py) - OAuth for Fanfou
 
 ## License
 
