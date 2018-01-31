@@ -23,7 +23,8 @@ class Main(Wox):
                 count = len(secret) % 2
                 return [{
                     'Title': '饭否',
-                    'SubTitle': '配置 Consumer Key 与 Consumer Secret' + ' ' * count,
+                    'SubTitle': '配置 Consumer Key 与 Consumer Secret' +
+                                ' ' * count,
                     'IcoPath': 'Images/wox-fanfou.png',
                     'JsonRPCAction': {
                         'method': 'write_consumer',
@@ -91,6 +92,7 @@ class Main(Wox):
             'secret': account['secret']
         }, account['username'], account['password'])
         ff.request('/statuses/update', 'POST', {'status': text})
+
 
 if __name__ == "__main__":
     Main()

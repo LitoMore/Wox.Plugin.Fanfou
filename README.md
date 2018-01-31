@@ -1,5 +1,10 @@
 # Wox.Plugin.Fanfou
 
+[![](https://img.shields.io/travis/LitoMore/Wox.Plugin.Fanfou/master.svg)](https://travis-ci.org/LitoMore/Wox.Plugin.Fanfou)
+[![](https://img.shields.io/github/release/LitoMore/Wox.Plugin.Fanfou.svg)](https://github.com/LitoMore/Wox.Plugin.Fanfou/releases)
+[![](https://img.shields.io/github/license/LitoMore/Wox.Plugin.Fanfou.svg)](https://github.com/LitoMore/Wox.Plugin.Fanfou/blob/master/LICENSE)
+[![](https://img.shields.io/badge/code_style-pipe8-orange.svg)](https://www.python.org/dev/peps/pep-0008)
+
 A Wox plugin for Fanfou
 
 ## Dependency
